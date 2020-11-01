@@ -1,0 +1,198 @@
+body{
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image: url("bg.png");
+}
+
+header{
+position: relative;
+top: 0;
+margin-left: 60%;
+text-decoration: none;
+color:white;
+background-color: grey;
+width: 40%;
+z-index: 2;
+
+}
+
+header a {
+    font-size: 20px;
+    text-decoration: none;
+    
+}
+
+header a:hover {
+    background-color: white;
+  }
+
+
+#über-überschrift {
+    padding-bottom: 30px;
+    padding-top: 50px;
+    color: white;
+    font-size: 50px;
+
+}
+
+#wrapper {
+
+width: 900px;
+margin:auto;
+}
+
+#AboutMe {
+    color: black;
+    font-size: 20px;
+
+}
+
+.Links {
+    color: black;
+    font-size: 20px;
+    
+    }
+.container {
+display: flex;
+justify-content: space-evenly;
+
+}
+
+
+#Portfolio {
+    color: black;
+     font-size: 20px;
+   
+     }
+        
+a {
+text-decoration: none;
+
+}
+
+ul{
+list-style: none;
+
+}
+
+#box1 {
+position: relative;
+Left: 50px;
+margin-top: -400px;
+width: 800px;
+height: 800px;
+background-color:#8E2009;
+border: #8E2009;
+border-radius: 500px;
+opacity: 90%;
+}
+
+.text {
+    position: relative;
+    top: 400px;
+    left: 230px;
+
+}
+
+
+input[type=text], 
+textarea {
+background-color: lightsalmon; 
+border: 3px solid red;
+margin: 5px 0;
+width: 80%;
+height: 50 px;
+font-size: larger;
+padding: 0;
+}
+
+input[type=submit] {
+background-color:lightpink ;    
+}
+
+input[type=submit]:hover {
+background-color: lightsalmon;
+    
+}
+
+div a{
+    color: black;
+}
+
+@media screen and (min-width:600px){
+
+    #wrapper{
+    background-color: blueviolet;
+    
+}
+
+    #onlineclasses {
+    width:100%;
+    }
+    #portfolio {
+        font-size: 40px;
+    }  
+       .links {
+        font-size: 40px;
+    }    
+    .verlinkung-class {
+    font-size: 40px;
+    }
+    #aboutMe {
+        font-size: 40px;
+
+    }
+
+}
+
+@media screen and (min-width:1024px){
+    #wrapper{
+        background-color: red;
+    }
+    #onlineclasses {
+        width:100%;
+        }
+    #portfolio {
+        font-size: 20px;
+    }    
+    .links {
+        font-size: 20px;
+    }    
+
+#aboutMe {
+    font-size: 20px;
+
+}
+        .verlinkung-class {
+            font-size: 20px;
+            }
+        
+        
+    
+
+}
+
+@media screen and (min-width:1920px){
+    #wrapper{
+        background-color: gold;
+    }
+    #onlineclasses {
+        width:50%;
+        
+        }
+        #portfolio {
+            font-size: 20px;
+        }    
+        .Links {
+            font-size: 20px;
+        }    
+    
+    #aboutMe {
+        font-size: 20px;
+
+    }
+        .verlinkung-class {
+            font-size: 20px;
+            }
+}
