@@ -40,6 +40,8 @@ header a:hover {
 
 width: 900px;
 margin:auto;
+padding-left: 40px;
+padding-right: 40px;
 }
 
 #AboutMe {
@@ -47,6 +49,22 @@ margin:auto;
     font-size: 20px;
 
 }
+
+/*.list-elements {
+
+    width: 100%;
+    border:1px solid black;
+    font-size: 40px;
+    margin: 20px;
+    padding: 15px 0px;
+    padding-left: 15%;
+    background-color: white;
+    
+}
+
+.list-elements:hover{
+    background-color:lightblue;
+}*/
 
 .Links {
     color: black;
@@ -58,7 +76,17 @@ display: flex;
 justify-content: space-evenly;
 
 }
+.container1 {
+display: flex;
+justify-content: space-around;
 
+}
+.container2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+    }
 
 #Portfolio {
     color: black;
@@ -120,6 +148,47 @@ div a{
     color: black;
 }
 
+@media screen and (max-width:600px){
+    #wrapper{
+        background-color: green;
+    }
+    #onlineclasses {
+        width:100%;
+        
+        }
+        #portfolio {
+            font-size: 40px;
+        }    
+        .Links {
+            font-size: 40px;
+        }    
+    
+    #aboutMe {
+        font-size: 40px;
+
+    }
+        .verlinkung-class {
+            font-size: 40px;
+            }
+
+            .list-elements {
+
+                width: 100%;
+                border:1px solid black;
+                font-size: 40px;
+                margin: 20px;
+                padding: 15px 0px;
+                padding-left: 15%;
+                background-color: white;
+                
+            }
+            
+            .list-elements:hover{
+                background-color:lightblue;
+            }
+
+}
+
 @media screen and (min-width:600px){
 
     #wrapper{
@@ -143,6 +212,22 @@ div a{
         font-size: 40px;
 
     }
+    
+.list-elements {
+
+    width: 100%;
+    border:1px solid black;
+    font-size: 40px;
+    margin: 20px;
+    padding: 15px 0px;
+    padding-left: 15%;
+    background-color: white;
+    
+}
+
+.list-elements:hover{
+    background-color:lightblue;
+}
 
 }
 
@@ -168,7 +253,27 @@ div a{
             font-size: 20px;
             }
         
-        
+            .container2 {
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+                
+                }
+.list-elements {
+
+   width: 45%;
+   border:1px solid black;
+   font-size: 20px;
+   margin: 15px 0px;
+   padding: 15px 0px;
+   background-color: white;
+   font-weight: bold;
+   padding-left: 10px;
+}
+
+.list-elements:hover{
+    background-color:lightblue;
+}
     
 
 }
@@ -195,4 +300,19 @@ div a{
         .verlinkung-class {
             font-size: 20px;
             }
+            .list-elements {
+
+                width: 45%;
+                border:1px solid black;
+                font-size: 20px;
+                margin: 15px 0px;
+                padding: 15px 0px;
+                background-color: white;
+                font-weight: bold;
+                padding-left: 10px;
+             }
+             
+             .list-elements:hover{
+                 background-color:lightblue;
+             }
 }
