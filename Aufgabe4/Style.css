@@ -87,6 +87,11 @@ justify-content: space-around;
     flex-wrap: wrap;
     
     }
+    .container3 {
+        display: flex;
+        justify-content: center;
+        
+        }
 
 #Portfolio {
     color: black;
