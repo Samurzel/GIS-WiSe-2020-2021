@@ -1,7 +1,4 @@
-export namespace PictureNamespace {
-
-
-    export interface PicturesInterface {
+    interface PicturesInterface {
         picture1: string;
         picture2: string;
         picture3: string;
@@ -13,16 +10,31 @@ export namespace PictureNamespace {
         picture9: string;
     }
     
-    export class Pictures implements PicturesInterface {
-        picture1: string = "default-image.png";
-        picture2: string = "default-image.png";
-        picture3: string = "default-image.png";
-        picture4: string = "default-image.png";
-        picture5: string = "default-image.png";
-        picture6: string = "default-image.png";
-        picture7: string = "default-image.png";
-        picture8: string = "default-image.png";
-        picture9: string = "default-image.png";
+    class Pictures implements PicturesInterface {
+
+        picture1: string;
+        picture2: string;
+        picture3: string;
+        picture4: string;
+        picture5: string;
+        picture6: string;
+        picture7: string;
+        picture8: string;
+        picture9: string;
+
+        
+
+        constructor(picture1: string = "", picture2: string = "", picture3: string = "", picture4: string = "", picture5: string = "", picture6: string = "", picture7: string = "", picture8: string = "", picture9: string = ""){
+            this.picture1 = picture1;
+            this.picture2 = picture2;
+            this.picture3 = picture3;
+            this.picture4 = picture4;
+            this.picture5 = picture5;
+            this.picture6 = picture6;
+            this.picture7 = picture7;
+            this.picture8 = picture8;
+            this.picture9 = picture9;
+        }
 
         setPicture1(pictureToSet: string): void {
             this.picture1 = pictureToSet;
@@ -52,4 +64,3 @@ export namespace PictureNamespace {
             this.picture9 = pictureToSet;
         }
     }
-}

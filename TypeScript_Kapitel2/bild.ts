@@ -1,20 +1,14 @@
-import { PictureNamespace } from "./pictures";
-import { UtilityNamespace } from "./utility";
-
 /**
- * Der folgende Code musste mithilfe von Browsify auf einem Browser ausführbar gemacht werden.
- * 
  * Zuvor muss mithilfe von "npm install -g http-server" ein HTTP-Server installiert werden.
+ * Ansonsten kann keine .json geladen werden da der fetch-Befehl nur HTTP entgegennimmt.
  * 
  * Das sind die Befehle die ausgeführt werden müssen, damit ein lokaler HTTP Server erstellt wird mit dem dann die Webseite unter http://127.0.0.1:8080/index.html aufgerufen werden kann.
- * browserify final.js -o bundle_final.js //Nur bei Änderung der final.js
- * browserify bild.js -o bundle_bild.js //Nur bei Änderung der bild.js
+ * 
  * http-server
  * 
- * Anders war es nicht möglich die "import" Anweisungen zu verwenden, da das Clientseitige Javascript das nicht unterstützt! In der Vorlesung wurde dies auch nicht weiter erläutert.
+ * Wenn man in der .json etwas abändert muss diese unter http://127.0.0.1:8080/data.json aufgerufen werden und mit Strg+F5 neugeladen werden, da der Browser sonst die alte .json im Cache hat!
  */
 
-namespace bildNamespace {
     let picture: HTMLImageElement;
     let picture1: HTMLImageElement;
     let picture2: HTMLImageElement;
@@ -22,7 +16,7 @@ namespace bildNamespace {
     let buttonLeft: HTMLInputElement;
     let buttonRight: HTMLInputElement;
     let buttonConfirm: HTMLInputElement;
-    let images: PictureNamespace.Pictures = new PictureNamespace.Pictures();
+    let images: Pictures = new Pictures();
 
     window.addEventListener("load", init);
 
@@ -47,7 +41,9 @@ namespace bildNamespace {
             images.setPicture8(data.picture8);
             images.setPicture9(data.picture9);
             console.log("Bilder", images);
+            setNextPicture(picture);
         });
+
     }
 
     function init(): void {
@@ -62,12 +58,13 @@ namespace bildNamespace {
         buttonLeft.addEventListener("click", function() {setLastPicture(picture); });
         buttonRight.addEventListener("click", function() {setNextPicture(picture); });
         buttonConfirm.addEventListener("click", function() {confirmSelection(); });
-        picture1.src = UtilityNamespace.getCookie("picture1");
-        picture2.src = UtilityNamespace.getCookie("picture2");
-        picture3.src = UtilityNamespace.getCookie("picture3");
-        picture1.alt = UtilityNamespace.getCookie("picture1");
-        picture2.alt = UtilityNamespace.getCookie("picture2");
-        picture3.alt = UtilityNamespace.getCookie("picture3");
+        
+        picture1.src = getCookie("picture1");
+        picture2.src = getCookie("picture2");
+        picture3.src = getCookie("picture3");
+        picture1.alt = getCookie("picture1");
+        picture2.alt = getCookie("picture2");
+        picture3.alt = getCookie("picture3");
     }
 
     /**
@@ -159,19 +156,18 @@ namespace bildNamespace {
         var currentPath: string = window.location.pathname.split('/').pop();
         var currentPicture: string = getCurrentPicture(picture);
         if (currentPath == "index.html" || currentPath == "") {
-            document.cookie = "picture1 = " + currentPicture + "; expires=" + UtilityNamespace.inOneHour + "; path=/";
+            document.cookie = "picture1 = " + currentPicture + "; expires=" + inOneHour + "; path=/";
             console.log(document.cookie);
             window.location.href = "./index2.html";
         } else if (currentPath == "index2.html") {
-            document.cookie = "picture2 = " + currentPicture + "; expires=" + UtilityNamespace.inOneHour + "; path=/";
+            document.cookie = "picture2 = " + currentPicture + "; expires=" + inOneHour + "; path=/";
             console.log(document.cookie);
             window.location.href = "./index3.html";
         } else if (currentPath == "index3.html") {
-            document.cookie = "picture3 = " + currentPicture + "; expires=" + UtilityNamespace.inOneHour + "; path=/";
+            document.cookie = "picture3 = " + currentPicture + "; expires=" + inOneHour + "; path=/";
             console.log(document.cookie);
             window.location.href = "./final.html";
         } else {
             console.log("Something went wrong with confirming your Selection");
         }
     }
-}

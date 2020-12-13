@@ -1,6 +1,6 @@
-import { UtilityNamespace } from "./utility";
+//import { UtilityNamespace } from "./utility";
 
-namespace FinalNamespace {
+namespace finalNamespace {
     let picture1: HTMLImageElement;
     let picture2: HTMLImageElement;
     let picture3: HTMLImageElement;
@@ -25,18 +25,18 @@ namespace FinalNamespace {
      * Displays all current pictures already selected.
      */
     function displayPictures(): void {
-        picture1.src = UtilityNamespace.getCookie("picture1");
-        picture2.src = UtilityNamespace.getCookie("picture2");
-        picture3.src = UtilityNamespace.getCookie("picture3");
+        picture1.src = getCookie("picture1");
+        picture2.src = getCookie("picture2");
+        picture3.src = getCookie("picture3");
     }
 
     /**
      * Resets all Cookies and proceeds you to the start-page.
      */
     function resetCookies(): void {
-        UtilityNamespace.resetCookie("picture1");
-        UtilityNamespace.resetCookie("picture2");
-        UtilityNamespace.resetCookie("picture3");
+        resetCookie("picture1");
+        resetCookie("picture2");
+        resetCookie("picture3");
         window.location.href = "./index.html";
     }
 
@@ -46,9 +46,9 @@ namespace FinalNamespace {
      */
     async function sendAnswer(url: string): Promise<void> {
         console.log("SendingAnswer");
-        let objectToSend: string[][] = [["picture1", UtilityNamespace.getCookie("picture1")], ["picture2", UtilityNamespace.getCookie("picture2")], ["picture3", UtilityNamespace.getCookie("picture3")]
-        , ["picture4", UtilityNamespace.getCookie("picture4")], ["picture5", UtilityNamespace.getCookie("picture5")], ["picture6", UtilityNamespace.getCookie("picture6")]
-        , ["picture7", UtilityNamespace.getCookie("picture7")], ["picture8", UtilityNamespace.getCookie("picture8")], ["picture9", UtilityNamespace.getCookie("picture9")]];
+        let objectToSend: string[][] = [["picture1", getCookie("picture1")], ["picture2", getCookie("picture2")], ["picture3", getCookie("picture3")]
+        , ["picture4", getCookie("picture4")], ["picture5", getCookie("picture5")], ["picture6", getCookie("picture6")]
+        , ["picture7", getCookie("picture7")], ["picture8", getCookie("picture8")], ["picture9", getCookie("picture9")]];
         let query: URLSearchParams = new URLSearchParams(<any>objectToSend);
         url = url + "?" + query.toString();
         let response: Response = await fetch(url);

@@ -1,7 +1,5 @@
-export namespace UtilityNamespace {
-
-    export let inOneMinute: Date = new Date(new Date().getTime() + 1 * 60 * 1000);
-    export let inOneHour: Date = new Date(new Date().getTime() + 60 * 60 * 1000);
+    let inOneMinute: Date = new Date(new Date().getTime() + 1 * 60 * 1000);
+    let inOneHour: Date = new Date(new Date().getTime() + 60 * 60 * 1000);
 
     /**
      * Get Cookie Function.
@@ -9,7 +7,7 @@ export namespace UtilityNamespace {
      * @param cname - The name of the Cookie to get.
      * @return Returns the cname Cookie.
      */
-    export function getCookie(cname: string): string {
+    function getCookie(cname: string): string {
         var name: string = cname + "=";
         var decodedCookie: string = decodeURIComponent(document.cookie);
         var ca: string[] = decodedCookie.split(';');
@@ -29,7 +27,6 @@ export namespace UtilityNamespace {
      * Resets the Cookie.
      * @param cname - The name of the Cookie to reset.
      */
-    export function resetCookie(cname: string): void {
+    function resetCookie(cname: string): void {
         document.cookie = cname + " = 'toDelete'; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
     }
-}

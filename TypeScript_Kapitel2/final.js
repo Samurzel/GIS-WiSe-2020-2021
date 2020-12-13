@@ -1,8 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const utility_1 = require("./utility");
-var FinalNamespace;
-(function (FinalNamespace) {
+//import { UtilityNamespace } from "./utility";
+var finalNamespace;
+(function (finalNamespace) {
     let picture1;
     let picture2;
     let picture3;
@@ -25,17 +24,17 @@ var FinalNamespace;
      * Displays all current pictures already selected.
      */
     function displayPictures() {
-        picture1.src = utility_1.UtilityNamespace.getCookie("picture1");
-        picture2.src = utility_1.UtilityNamespace.getCookie("picture2");
-        picture3.src = utility_1.UtilityNamespace.getCookie("picture3");
+        picture1.src = getCookie("picture1");
+        picture2.src = getCookie("picture2");
+        picture3.src = getCookie("picture3");
     }
     /**
      * Resets all Cookies and proceeds you to the start-page.
      */
     function resetCookies() {
-        utility_1.UtilityNamespace.resetCookie("picture1");
-        utility_1.UtilityNamespace.resetCookie("picture2");
-        utility_1.UtilityNamespace.resetCookie("picture3");
+        resetCookie("picture1");
+        resetCookie("picture2");
+        resetCookie("picture3");
         window.location.href = "./index.html";
     }
     /**
@@ -44,9 +43,9 @@ var FinalNamespace;
      */
     async function sendAnswer(url) {
         console.log("SendingAnswer");
-        let objectToSend = [["picture1", utility_1.UtilityNamespace.getCookie("picture1")], ["picture2", utility_1.UtilityNamespace.getCookie("picture2")], ["picture3", utility_1.UtilityNamespace.getCookie("picture3")],
-            ["picture4", utility_1.UtilityNamespace.getCookie("picture4")], ["picture5", utility_1.UtilityNamespace.getCookie("picture5")], ["picture6", utility_1.UtilityNamespace.getCookie("picture6")],
-            ["picture7", utility_1.UtilityNamespace.getCookie("picture7")], ["picture8", utility_1.UtilityNamespace.getCookie("picture8")], ["picture9", utility_1.UtilityNamespace.getCookie("picture9")]];
+        let objectToSend = [["picture1", getCookie("picture1")], ["picture2", getCookie("picture2")], ["picture3", getCookie("picture3")],
+            ["picture4", getCookie("picture4")], ["picture5", getCookie("picture5")], ["picture6", getCookie("picture6")],
+            ["picture7", getCookie("picture7")], ["picture8", getCookie("picture8")], ["picture9", getCookie("picture9")]];
         let query = new URLSearchParams(objectToSend);
         url = url + "?" + query.toString();
         let response = await fetch(url);
@@ -64,5 +63,5 @@ var FinalNamespace;
             }
         });
     }
-})(FinalNamespace || (FinalNamespace = {}));
+})(finalNamespace || (finalNamespace = {}));
 //# sourceMappingURL=final.js.map
